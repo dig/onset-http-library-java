@@ -11,8 +11,8 @@ We are slowly working on this, more will come such as Async.
 1. Create a folder inside your servers package folder called http, download all files from this repository and place them inside the http folder.
 1. Edit your server_config.json to install http as a package.
 1. Create a folder inside the root server directory called "jars", skip this if you already have one.
-1. Download onset-http-library.jar from HERE and place inside jars folder.
-1. Download OnsetJavaPlugin.dll from HERE and place inside plugins folder.
+1. Download onset-http-library.jar from Releases ([HERE](https://github.com/dig/onset-http-library/releases)) and place inside jars folder.
+1. Download OnsetJavaPlugin.dll (Windows) & OnsetJavaPlugin.so (Linux) from Releases ([HERE](https://github.com/dig/onset-http-library/releases)) and place inside plugins folder.
 
 ### Example
 ```lua
