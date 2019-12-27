@@ -13,6 +13,7 @@ We are slowly working on this, more will come such as Async.
 1. Create a folder inside the root server directory called "jars", skip this if you already have one.
 1. Download onset-http-library.jar from Releases ([HERE](https://github.com/dig/onset-http-library/releases)) and place inside jars folder.
 1. Download OnsetJavaPlugin.dll (Windows) & OnsetJavaPlugin.so (Linux) from Releases ([HERE](https://github.com/dig/onset-http-library/releases)) and place inside plugins folder.
+1. Ensure Java 8 is installed.
 1. Enable "OnsetJavaPlugin" as a plugin inside server_config.json.
 
 ### Example
