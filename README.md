@@ -35,6 +35,14 @@ print (_res.status)
 ```
 
 ### Functions
+#### SetTimeouts
+Sets the timeouts for sockets and requests.
+```lua
+http.SetTimeouts(socketMs, requestMs)
+```
+* **socketMs** Socket timeout in milliseconds. Default is 60000ms. Example: 60000
+* **requestMs** Request timeout in milliseconds. Default is 10000ms. Example: 10000
+
 #### Get (Sync)
 Send a Get request.
 ```lua
