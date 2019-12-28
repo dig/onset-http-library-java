@@ -3,7 +3,7 @@ Authors: Digital
 
 ### Features
 * Sync & Async.
-* Get & Post requests.
+* GET, POST, PUT & HEAD requests.
 
 We are slowly working on this, more will come such as Async.
 
