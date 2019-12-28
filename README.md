@@ -16,16 +16,6 @@ We are slowly working on this, more will come such as Async.
 1. Ensure Java 8 JDK/JRE 64bit is installed.
 1. Enable "OnsetJavaPlugin" as a plugin inside server_config.json.
 
-### Issues
-If you have the following error in console while loading our Java plugin,
-```
-[2019-12-27 20:01:37] [info] Loading plugin "OnsetJavaPlugin"
-[2019-12-27 20:01:37] [error] Failed loading "OnsetJavaPlugin": The specified module could not be found.
-```
-This is typically an issue with Windows users. To fix this, add your Java 8 bin/server folder to your PATH configuration. Example of JDK (or JRE) path:
-```C:\Program Files\Java\jdk1.8.0_221\jre\bin\server```
-Make sure your Java installation is 64 bit otherwise it won't have the required JNI libraries we use.
-
 ### Example
 ```lua
 local http = ImportPackage('http')
