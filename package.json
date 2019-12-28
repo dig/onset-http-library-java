@@ -3,6 +3,7 @@
   "version": "1.0",
   "server_scripts": [
     "base.lua",
-    "sync.lua"
+    "sync.lua",
+    "async.lua"
   ]
 }

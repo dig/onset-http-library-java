@@ -1,4 +1,4 @@
-function Sync_Get(url, headers)
+local function Sync_Get(url, headers)
   if url == nil then return end
   if headers == nil then headers = {} end
 
@@ -9,7 +9,7 @@ function Sync_Get(url, headers)
 end
 AddFunctionExport('Get', Sync_Get)
 
-function Sync_GetParams(url, headers, params)
+local function Sync_GetParams(url, headers, params)
   if url == nil then return end
   if headers == nil then headers = {} end
   if params == nil then params = {} end
@@ -21,7 +21,7 @@ function Sync_GetParams(url, headers, params)
 end
 AddFunctionExport('Get', Sync_Get)
 
-function Sync_Post(url, headers, body)
+local function Sync_Post(url, headers, body)
   if url == nil then return end
   if headers == nil then headers = {} end
   if body == nil then body = "" end
@@ -33,7 +33,7 @@ function Sync_Post(url, headers, body)
 end
 AddFunctionExport('Post', Sync_Post)
 
-function Sync_PostFields(url, headers, fields)
+local function Sync_PostFields(url, headers, fields)
   if url == nil then return end
   if headers == nil then headers = {} end
   if fields == nil then fields = "" end
