@@ -117,6 +117,69 @@ http.PostAsync(url, headers, fields)
 
 Returns a request ID which can be used with event OnAsyncHTTPRequest (see below for more information).
 
+#### Put (Sync)
+Send a Put request.
+```lua
+http.Put(url, headers, body)
+http.Put(url, headers, fields)
+```
+* **url** The URL to send the request to. Example: https://google.com
+* **headers** Table of headers to send. Example: { myHeader = "hi", anotherHeader = "lol", authentication = "bearer 123" }
+* **body** String body, could be JSON. Example: "Hello, I am the body of the POST request."
+* **fields** Same as above but table is automatically parsed to JSON. Example: { key = "123", name = "Joseph" }
+
+Returns a table with body, status and statusText. Nil if failed.
+```lua
+{
+  body = "",
+  status = 200,
+  statusText = "OK"
+}
+```
+
+#### Put (Async)
+Send a Put request.
+```lua
+http.PutAsync(url, headers, body)
+http.PutAsync(url, headers, fields)
+```
+* **url** The URL to send the request to. Example: https://google.com
+* **headers** Table of headers to send. Example: { myHeader = "hi", anotherHeader = "lol", authentication = "bearer 123" }
+* **body** String body, could be JSON. Example: "Hello, I am the body of the POST request."
+* **fields** Same as above but table is automatically parsed to JSON. Example: { key = "123", name = "Joseph" }
+
+Returns a request ID which can be used with event OnAsyncHTTPRequest (see below for more information).
+
+#### Head (Sync)
+Send a Head request.
+```lua
+http.Head(url, headers)
+http.Head(url, headers, params)
+```
+* **url** The URL to send the request to. Example: https://google.com
+* **headers** Table of headers to send. Example: { myHeader = "hi", anotherHeader = "lol", authentication = "bearer 123" }
+* **params** Parameters to add to the request. Example: { apiKey = "123" }
+
+Returns a table with status and statusText. Nil if failed.
+```lua
+{
+  status = 200,
+  statusText = "OK"
+}
+```
+
+#### Head (Async)
+Send a Head request.
+```lua
+http.HeadAsync(url, headers)
+http.HeadAsync(url, headers, params)
+```
+* **url** The URL to send the request to. Example: https://google.com
+* **headers** Table of headers to send. Example: { myHeader = "hi", anotherHeader = "lol", authentication = "bearer 123" }
+* **params** Parameters to add to the request. Example: { apiKey = "123" }
+
+Returns a request ID which can be used with event OnAsyncHTTPRequest (see below for more information).
+
 ### Events
 #### OnAsyncHTTPRequest
 Called when a async request has either been successful or failed.
@@ -127,7 +190,7 @@ end
 AddEvent('OnAsyncHTTPRequest', OnAsyncHTTPRequest)
 ```
 * **id** Unique identifier for the request you have sent. GetAsync & PostAsync will return a ID which can be compared to this. Example: 1
-* **requestType** 0 for GET, 1 for POST. 
+* **requestType** 0 for GET, 1 for POST, 2 for PUT and 3 for HEAD.
 * **error** True for request failed, false for successful request.
 * **body** Request body, usually HTML.
 * **status** HTTP status code.
