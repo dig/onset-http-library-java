@@ -2,7 +2,7 @@
 Authors: Digital
 
 ### Features
-* Sync.
+* Sync & Async.
 * Get & Post requests.
 
 We are slowly working on this, more will come such as Async.
@@ -72,6 +72,18 @@ Returns a table with body, status and statusText. Nil if failed.
 }
 ```
 
+#### Get (Async)
+Send a Get request.
+```lua
+http.GetAsync(url, headers)
+http.GetAsync(url, headers, params)
+```
+* **url** The URL to send the request to. Example: https://google.com
+* **headers** Table of headers to send. Example: { myHeader = "hi", anotherHeader = "lol", authentication = "bearer 123" }
+* **params** Parameters to add to the request. Example: { apiKey = "123" }
+
+Returns a request ID which can be used with event OnAsyncHTTPRequest (see below for more information).
+
 #### Post (Sync)
 Send a Post request.
 ```lua
@@ -91,3 +103,32 @@ Returns a table with body, status and statusText. Nil if failed.
   statusText = "OK"
 }
 ```
+
+#### Post (Async)
+Send a Post request.
+```lua
+http.PostAsync(url, headers, body)
+http.PostAsync(url, headers, fields)
+```
+* **url** The URL to send the request to. Example: https://google.com
+* **headers** Table of headers to send. Example: { myHeader = "hi", anotherHeader = "lol", authentication = "bearer 123" }
+* **body** String body, could be JSON. Example: "Hello, I am the body of the POST request."
+* **fields** Same as above but table is automatically parsed to JSON. Example: { key = "123", name = "Joseph" }
+
+Returns a request ID which can be used with event OnAsyncHTTPRequest (see below for more information).
+
+### Events
+#### OnAsyncHTTPRequest
+Called when a async request has either been successful or failed.
+```lua
+function OnAsyncHTTPRequest(id, requestType, error, body, status, statusText)
+  -- code here
+end
+AddEvent('OnAsyncHTTPRequest', OnAsyncHTTPRequest)
+```
+* **id** Unique identifier for the request you have sent. GetAsync & PostAsync will return a ID which can be compared to this. Example: 1
+* **requestType** 0 for GET, 1 for POST. 
+* **error** True for request failed, false for successful request.
+* **body** Request body, usually HTML.
+* **status** HTTP status code.
+* **statusText** Text version of the HTTP status code.
