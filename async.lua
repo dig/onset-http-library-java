@@ -97,3 +97,53 @@ local function Async_HeadParams(url, headers, params)
   return counter
 end
 AddFunctionExport('HeadAsync', Async_HeadParams)
+
+-- DELETE
+local function Async_Delete(url, headers, body)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if body == nil then body = "" end
+
+  counter = counter + 1
+  CallJavaStaticMethod(JVM, 'dev/joseph/http/Async', 'delete', '(Ljava/lang/Integer;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)V', counter, url, headers, body)
+
+  return counter
+end
+AddFunctionExport('DeleteAsync', Async_Delete)
+
+local function Async_DeleteFields(url, headers, fields)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if fields == nil then fields = {} end
+
+  counter = counter + 1
+  CallJavaStaticMethod(JVM, 'dev/joseph/http/Async', 'delete', '(Ljava/lang/Integer;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;)V', counter, url, headers, fields)
+
+  return counter
+end
+AddFunctionExport('DeleteAsync', Async_DeleteFields)
+
+-- PATCH
+local function Async_Patch(url, headers, body)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if body == nil then body = "" end
+
+  counter = counter + 1
+  CallJavaStaticMethod(JVM, 'dev/joseph/http/Async', 'patch', '(Ljava/lang/Integer;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)V', counter, url, headers, body)
+
+  return counter
+end
+AddFunctionExport('PatchAsync', Async_Patch)
+
+local function Async_PatchFields(url, headers, fields)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if fields == nil then fields = {} end
+
+  counter = counter + 1
+  CallJavaStaticMethod(JVM, 'dev/joseph/http/Async', 'patch', '(Ljava/lang/Integer;Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;)V', counter, url, headers, fields)
+
+  return counter
+end
+AddFunctionExport('PatchAsync', Async_PatchFields)

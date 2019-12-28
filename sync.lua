@@ -95,3 +95,53 @@ local function Sync_HeadParams(url, headers, params)
   return _response
 end
 AddFunctionExport('Head', Sync_HeadParams)
+
+-- DELETE
+local function Sync_Delete(url, headers, body)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if body == nil then body = "" end
+
+  local _response = CallJavaStaticMethod(JVM, 'dev/joseph/http/Sync', 'delete', '(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;', url, headers, body)
+
+  if _response == nil then return false end
+  return _response
+end
+AddFunctionExport('Delete', Sync_Delete)
+
+local function Sync_DeleteFields(url, headers, fields)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if fields == nil then fields = {} end
+
+  local _response = CallJavaStaticMethod(JVM, 'dev/joseph/http/Sync', 'delete', '(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;)Ljava/util/Map;', url, headers, fields)
+
+  if _response == nil then return false end
+  return _response
+end
+AddFunctionExport('Delete', Sync_DeleteFields)
+
+-- PATCH
+local function Sync_Patch(url, headers, body)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if body == nil then body = "" end
+
+  local _response = CallJavaStaticMethod(JVM, 'dev/joseph/http/Sync', 'patch', '(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;', url, headers, body)
+
+  if _response == nil then return false end
+  return _response
+end
+AddFunctionExport('Patch', Sync_Patch)
+
+local function Sync_PatchFields(url, headers, fields)
+  if url == nil then return end
+  if headers == nil then headers = {} end
+  if fields == nil then fields = {} end
+
+  local _response = CallJavaStaticMethod(JVM, 'dev/joseph/http/Sync', 'patch', '(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;)Ljava/util/Map;', url, headers, fields)
+
+  if _response == nil then return false end
+  return _response
+end
+AddFunctionExport('Patch', Sync_PatchFields)
