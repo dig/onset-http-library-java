@@ -5,8 +5,6 @@ Authors: Digital
 * Sync & Async.
 * GET, POST, PUT, HEAD, DELETE & PATCH requests.
 
-We are slowly working on this, more will come such as Async.
-
 ### Installation
 1. Create a folder inside your servers package folder called http, download all files from this repository and place them inside the http folder.
 1. Install "http" as a package inside server_config.json.
