@@ -1,6 +1,8 @@
 # onset-http-library
 Authors: Digital
 
+**NOTICE: This is no longer maintained, I've made a much better version in a c++ plugin which cuts out loading the JVM part. Check it out here: https://github.com/dig/onset-http-plugin. Since the c++ version does not have async, you can still use this one for async requests until its added.**
+
 ### Features
 * Sync & Async.
 * GET, POST, PUT, HEAD, DELETE & PATCH requests.
